@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공부 플래너</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <h1>📚 공부 플래너</h1>
+        
+        <div class="setup-section">
+            <div class="date-section">
+                <div class="input-group">
+                    <label for="todayDate">오늘 날짜:</label>
+                    <input type="date" id="todayDate">
+                </div>
+                <div class="input-group">
+                    <label for="examDate">시험 예정일:</label>
+                    <input type="date" id="examDate">
+                </div>
+                <div class="days-left">
+                    <span id="daysLeft">남은 일수: -</span>
+                </div>
+            </div>
+
+            <div class="subject-section">
+                <h3>시험 과목 선택</h3>
+                <div class="subjects-grid">
+                    <div class="subject-category">
+                        <label><input type="checkbox" value="수학"> 수학</label>
+                    </div>
+                    <div class="subject-category">
+                        <label><input type="checkbox" value="국어"> 국어</label>
+                    </div>
+                    <div class="subject-category">
+                        <label><input type="checkbox" value="영어"> 영어</label>
+                    </div>
+                    <div class="subject-category">
+                        <div class="category-header">사탐</div>
+                        <div class="category-subjects">
+                            <label><input type="checkbox" value="윤리와사상"> 윤리와 사상</label>
+                            <label><input type="checkbox" value="한국지리"> 한국지리</label>
+                            <label><input type="checkbox" value="세계사"> 세계사</label>
+                            <label><input type="checkbox" value="정치와법"> 정치와 법</label>
+                            <label><input type="checkbox" value="경제"> 경제</label>
+                        </div>
+                    </div>
+                    <div class="subject-category">
+                        <div class="category-header">과탐</div>
+                        <div class="category-subjects">
+                            <label><input type="checkbox" value="물리학"> 물리학</label>
+                            <label><input type="checkbox" value="화학"> 화학</label>
+                            <label><input type="checkbox" value="생명과학"> 생명과학</label>
+                            <label><input type="checkbox" value="지구과학"> 지구과학</label>
+                        </div>
+                    </div>
+                    <div class="subject-category">
+                        <div class="category-header">제2외국어</div>
+                        <div class="category-subjects">
+                            <label><input type="checkbox" value="중국어"> 중국어</label>
+                            <label><input type="checkbox" value="프랑스어"> 프랑스어</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="importance-section" class="importance-section" style="display: none;">
+                <h3>과목별 중요도 설정</h3>
+                <div id="importance-list"></div>
+            </div>
+
+            <div class="study-config">
+                <div class="input-group">
+                    <label for="dailySubjects">하루에 공부할 과목 수:</label>
+                    <input type="number" id="dailySubjects" min="1" max="10" value="3">
+                </div>
+                <button id="generatePlan" class="btn-primary">계획 생성</button>
+            </div>
+        </div>
+
+        <div id="planSection" class="plan-section" style="display: none;">
+            <h3>📅 공부 계획</h3>
+            <div class="plan-controls">
+                <button id="resetPlan" class="btn-secondary">계획 초기화</button>
+            </div>
+            <div id="studyPlan" class="study-plan"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
